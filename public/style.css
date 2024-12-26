@@ -1,0 +1,104 @@
+/* standards ________________________________________________________________*/
+* {
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: none;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+:root {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --black010: rgba(0, 0, 0, 0.1);
+  --black050: rgba(0, 0, 0, 0.5);
+  --gray010: rgba(128, 128, 128, 0.1);
+  --gray050: rgba(128, 128, 128, 0.5);
+  --white010: rgba(255, 255, 255, 0.1);
+  --white050: rgba(255, 255, 255, 0.5);
+  --accent: lightsteelblue;
+  --shadow: 0 0 0.5rem var(--black050);
+  --dark-bg-color: rgb(33, 33, 33);
+  --dark-color: rgb(222, 222, 222);
+  background-color: var(--dark-bg-color);
+  color: var(--dark-color);
+}
+
+/* elements _________________________________________________________________*/
+button {
+  cursor: pointer;
+  background-color: transparent;
+  color: inherit;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  outline: 1px solid;
+
+  width: 33%;
+}
+button:hover,
+button:focus {
+  outline: 2px solid;
+}
+
+input {
+  background-color: transparent;
+  color: inherit;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  outline: 1px solid;
+
+  width: 75%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.5rem;
+}
+hr {
+  border: 1px solid;
+  width: 100%;
+}
+img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+form {
+  display: inline;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  > * {
+    width: 375px;
+  }
+}
+
+div > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.show {
+  outline: 1px solid;
+  border-radius: 1rem;
+  padding: 0.5rem 0;
+}

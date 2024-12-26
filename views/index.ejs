@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- id author, book, genre -->
+    <div class="read">
+      <form action="/search" method="get">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Title / Author / Genre"
+        />
+        <button type="submit">Search</button>
+      </form>
+      <form action="/" method="get">
+        <button type="submit">Show All</button>
+      </form>
+    </div>
+    <hr />
+    <div class="create">
+      <form action="/create" method="post">
+        <input
+          type="text"
+          name="title"
+          id="title"
+          required
+          placeholder="Title"
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          required
+          placeholder="Author"
+        />
+        <input
+          type="text"
+          name="genre"
+          id="genre"
+          required
+          placeholder="Genre"
+        />
+        <button type="submit">Add</button>
+      </form>
+    </div>
+    <hr />
+    <% rows.forEach(row => { %>
+    <div class="show">
+      <form action="/update" method="post">
+        <input type="hidden" name="id" value="<%= row.id %>" />
+        <input
+          type="text"
+          name="title"
+          id="title"
+          required
+          placeholder="Title"
+          value="<%= row.title %>"
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          required
+          placeholder="Author"
+          value="<%= row.author %>"
+        />
+        <input
+          type="text"
+          name="genre"
+          id="genre"
+          required
+          placeholder="Genre"
+          value="<%= row.genre %>"
+        />
+        <button type="submit">Update</button>
+      </form>
+      <form action="/destroy" method="post">
+        <input type="hidden" name="id" value="<%= row.id %>" />
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+    <% }) %>
+  </body>
+</html>
